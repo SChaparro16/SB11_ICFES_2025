@@ -1,0 +1,38 @@
+Dimensión
+Ubicación geográfica
+estu_depto_reside
+estu_cod_reside_depto
+estu_mcpio_reside
+estu_cod_reside_mcpio
+Caracterización del estudiante
+estu_genero
+estu_fechanacimiento
+estu_estudiante
+estu_dedicacionlecturadiaria
+estu_dedicacioninternet
+estu_horassemanatrabaja
+punt_global
+estu_inse_individual
+Caracterización familiar
+fami_estratovivienda
+fami_personashogar
+fami_cuartoshogar
+fami_educacionpadre
+fami_educacionmadre
+fami_tieneinternet
+fami_tieneserviciotv
+fami_tienecomputador
+fami_tienelavadora
+fami_tienehornomicroogas
+fami_tieneautomovil
+fami_tienemotocicleta
+Nutrición
+fami_comelechederivados
+fami_comecarnepescadohuevo
+fami_comecerealfrutoslegumbre
+Caracterización escolar
+cole_genero
+cole_naturaleza
+cole_caracter
+cole_area_ubicacion
+cole_jornada
