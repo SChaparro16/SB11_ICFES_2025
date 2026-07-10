@@ -39,15 +39,18 @@ sb11_2025_f = sb11_2025.filter(items = vars["Dimensión"])
 nna_sb11 = sb11_2025_f.isna().sum().sort_values().to_frame(name = "NA")
 nna_sb11["NA (%)"] = (nna_sb11["NA"] / nna_sb11["NA"].sum())*100
 
-# ---- Genero del estudiante (98 observaciones) - Creación de categoría
+# ---- Genero del estudiante
+# (98 observaciones) - Creación de categoría
 sb11_2025_f["estu_genero"] = sb11_2025_f["estu_genero"].fillna("NA")
 
-# ---- Caracterización geográfica (227 observaciones) - Eliminación 
+# ---- Caracterización geográfica
+#  (227 observaciones) - Eliminación 
 sb11_2025_fna = sb11_2025_f[sb11_2025_f["estu_depto_reside"].isna()]
 sb11_2025_fna["cole_codigo_icfes"].value_counts().reset_index()
 sb11_2025_f2 = sb11_2025_f.dropna(subset = ["estu_depto_reside"])
 
-# ---- Código ICFES para instituciones (64482 observaciones) - Eliminación
+# ---- Tipo de examinando
+#  (64482 observaciones) - Eliminación
 sb11_2025_fna2 = sb11_2025_f2[sb11_2025_f2["cole_codigo_icfes"].isna()]
 sb11_2025_fna2["estu_estudiante"].value_counts()
 ## Análisis por segmento
@@ -80,3 +83,12 @@ np.std(na_find) # Desv. Estandaer porcentaje de valores faltantes
 
 ## Eliminación de datos INDIVIDUAL
 sb11_2025_f3 = sb11_2025_f2[sb11_2025_f2["estu_estudiante"] == "ESTUDIANTE"]
+
+# ---- Educación de los padres
+sb11_2025_f3["fami_educacionmadre"].value_counts().reset_index()
+sb11_2025_f3["fami_educacionmadre"] = sb11_2025_f3["fami_educacionmadre"].fillna("No sabe")
+sb11_2025_f3["fami_educacionpadre"].value_counts().reset_index()
+sb11_2025_f3["fami_educacionpadre"] = sb11_2025_f3["fami_educacionpadre"].fillna("No sabe")
+
+# ---- Estrato socieconómico
+
